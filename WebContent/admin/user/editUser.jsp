@@ -16,15 +16,15 @@
 					<div class="card-header">Sửa người dùng</div>
 					<div class="card-body card-block">
 						<%
-							if(request.getAttribute("objUser")!=null){
-								User objUser = (User)request.getAttribute("objUser");
-								
-							
+							if (request.getAttribute("objUser") != null) {
+								User objUser = (User) request.getAttribute("objUser");
 						%>
-						<form action="<%=request.getContextPath()%>/admin/user/edit" method="post" class="col-8">
+						<form action="<%=request.getContextPath()%>/admin/user/edit"
+							method="post" class="col-8">
 							<div class="form-group">
 								<div class="input-group">
-									<input type="text" id="username2" name="username2" value = "<%=objUser.getUsername() %>"
+									<input type="text" id="username" name="username"
+										disabled="disabled" value="<%=objUser.getUsername()%>"
 										placeholder="Username" class="form-control">
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
@@ -33,8 +33,9 @@
 							</div>
 							<div class="form-group">
 								<div class="input-group">
-									<input type="text" id="fullname" name="fullname" value = "<%=objUser.getFullname() %>"
-										placeholder="Fullname" class="form-control">
+									<input type="text" id="fullname" name="fullname"
+										value="<%=objUser.getFullname()%>" placeholder="Fullname"
+										class="form-control">
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
 									</div>
@@ -42,14 +43,20 @@
 							</div>
 							<div class="form-group">
 								<div class="input-group">
-									<input type="password" id="password2" name="password2"
+									<input type="password" id="password" name="password"
 										placeholder="Password" class="form-control">
 									<div class="input-group-addon">
 										<i class="fa fa-asterisk"></i>
 									</div>
 								</div>
 							</div>
+							<div class="form-group">
+								<div class="input-group">
+									<input type="hidden" id="" name="idUser"
+										value="<%=objUser.getIdUser()%>" class="form-control">
 
+								</div>
+							</div>
 							<button type="submit" class="btn btn-primary btn-sm">
 								<i class="fa fa-dot-circle-o"></i> Edit
 							</button>
@@ -57,7 +64,9 @@
 								<i class="fa fa-ban"></i> Reset
 							</button>
 						</form>
-						<%} %>
+						<%
+							}
+						%>
 					</div>
 				</div>
 

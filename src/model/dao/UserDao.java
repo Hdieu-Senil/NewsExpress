@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 import org.w3c.dom.stylesheets.LinkStyle;
 
 import model.been.User;
@@ -147,5 +149,28 @@ public class UserDao {
 			}
 		}
 		return objUser;
+	}
+
+	public int editUser(User objUser) {
+		int result = 0;
+		conn = connectDBUtil.getConnection();
+		String sql = "UPDATE users SET password=?,fullname=? WHERE id = ?";
+		try {
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, objUser.getPassword());
+			pst.setString(2, objUser.getFullname());
+			pst.setInt(3, objUser.getIdUser());
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pst.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 }

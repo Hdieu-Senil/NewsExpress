@@ -2,7 +2,7 @@
     <wb-module deploy-name="Bnew">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Bnew"/>
         <property name="java-output-path" value="/Bnew/build/classes"/>
+        <property name="context-root" value="NewsExpress"/>
     </wb-module>
 </project-modules>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.been.User;
 import model.dao.UserDao;
+import util.StringUtil;
 
 /**
  * Servlet implementation class AdminUserEditController
@@ -42,8 +43,23 @@ public class AdminUserEditController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		int idUser = Integer.parseInt(request.getParameter("idUser"));
+		System.out.println(idUser);
+		String pasword = request.getParameter("password");
+		String fullname = request.getParameter("fullname");
+		userDao = new UserDao();
+		if("".equals(pasword)) {
+			pasword = StringUtil.md5(userDao.getItem(idUser).getPassword());
+		}else {
+			pasword = StringUtil.md5(pasword);
+		}
+		User objUser = new User(idUser, "", fullname, pasword);
+		if(userDao.editUser(objUser)>0) {
+			response.sendRedirect(request.getContextPath()+"/admin/users?msg=2");
+		}else {
+			response.sendRedirect(request.getContextPath()+"/admin/users?msg=0");
+		}
 	}
 
 }
