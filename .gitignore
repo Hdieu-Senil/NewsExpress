@@ -1,52 +1,57 @@
-# Prerequisites
-*.d
+#
+# Project specific excludes
+#
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+tomcat
 
-# Linker output
-*.ilk
-*.map
-*.exp
+#
+# Default excludes
+#
 
-# Precompiled Headers
-*.gch
-*.pch
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+#*.jar
+*.rar
+*.tar
+*.zip
+*.war
+*.ear
+*.sar
+*.class
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Maven 
+target/
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+.idea/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# eclipse project file
+.settings/
+.classpath
+.project
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# NetBeans specific
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+
+# OS
+.DS_Store
+
+# Misc
+*.swp
+release.properties
+pom.xml.releaseBackup
+pom.xml.tag
+/.metadata/

@@ -1,0 +1,14 @@
+foder admin:
+	- file jsp của admin
+foder public 
+	- file jsp của public
+foder file
+	chứa các hình hảnh file dữ liệu tải lên server
+foder template 
+	-> admin: chứa foder, file : css, js, fonts, image, inc (file tách ghép giao diện)
+	-> public (nt)
+foder Web-INF -> lib 
+	chứa các thư viện hỗ trợ
+	
+	
+	
