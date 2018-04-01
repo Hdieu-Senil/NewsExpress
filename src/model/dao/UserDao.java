@@ -7,10 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import javax.naming.spi.DirStateFactory.Result;
-
-import org.w3c.dom.stylesheets.LinkStyle;
-
 import model.been.User;
 import util.ConnectDBUtil;
 
@@ -38,7 +34,6 @@ public class UserDao {
 						rs.getString("password"));
 				listItems.add(objItem);
 			}
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

@@ -22,7 +22,7 @@
 								<strong class="card-title">Người dùng</strong>
 							</div>
 							<div class="col-md-4 ml-auto">
-								<a href="<%=request.getContextPath()%>/admin/user/add"><i
+								<a href="<%=request.getContextPath()%>/admin/cat/add"><i
 									class="fa fa-plus-circle"></i> Thêm người dùng</a>
 							</div>
 						</div>
@@ -61,7 +61,7 @@
 						%>
 						<div
 							class="sufee-alert alert with-close alert-primary alert-dismissible fade show">
-							<span class="badge badge-pill badge-<%=type%>"><%=result %></span><%=note %>
+							<span class="badge badge-pill badge-<%=type%>"><%=result %></span>&emsp;<%=note %>
 							<button type="button" class="close" data-dismiss="alert"
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>

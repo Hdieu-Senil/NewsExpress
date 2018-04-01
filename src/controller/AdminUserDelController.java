@@ -41,7 +41,6 @@ public class AdminUserDelController extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/admin/users?msg=3");
 		}else {
 			response.sendRedirect(request.getContextPath()+"/admin/users?msg=0");
-			
 		}
 	}
 

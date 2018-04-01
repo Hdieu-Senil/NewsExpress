@@ -36,6 +36,7 @@ public class AdminUserAddController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("username");
 		String fullname = request.getParameter("fullname");
 		String password = StringUtil.md5(request.getParameter("password"));

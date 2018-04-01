@@ -27,8 +27,8 @@
 								<%
 									if(request.getParameter("msg")!=null){
 										int msg = Integer.parseInt(request.getParameter("msg")) ;
-										switch(msg){
-										case 0: out.print("<p style = 'color: red'>Tên người dùng đã tồn tại. Vui lòng nhập tên khác</p>");
+										if(msg==0){
+											out.print("<p style = 'color: red'>Tên người dùng đã tồn tại. Vui lòng nhập tên khác</p>");
 										}
 									}
 								%>
